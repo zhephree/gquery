@@ -3,7 +3,7 @@ var $ = function(s) {
   if (typeof s === 'string') {
       this.elements = document.querySelectorAll(s);
   }else if (Array.isArray(s)){
-  	  this.elements = s;
+      this.elements = s;
   } else {
       this.elements = [s];
   }
