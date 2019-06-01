@@ -8,6 +8,11 @@ var $ = function(s) {
       this.elements = [s];
   }
 
+  this.find = function(s){
+    var children = this.elements[0].querySelectorAll(s);
+    return $(children);
+  }
+
   this.on = function(e, cb) {
       var events = e.split(' ');
       for (var i = 0; i < this.elements.length; i++) {
@@ -155,7 +160,7 @@ var $ = function(s) {
 
 
   this.hasClass = function(c){
-    return this.elements[0].classList.contains(c);
+    return this.elements[0] && this.elements[0].classList.contains(c);
   }
 
   this.show = function(v) {
